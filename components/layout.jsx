@@ -11,7 +11,7 @@ export default function Layout({children, pageTitle, content}) {
         <meta name="description" content={content} />
         {/* <link rel="icon" href="/Logo/favicon.png" /> */}
     </Head>
-    <Navbar />
+    <Navbar Title={pageTitle}/>
     <main className='md:pt-20 md:px-7 bg-dark-5'>{children}</main>
     </>
   )
