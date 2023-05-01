@@ -5,7 +5,7 @@ import moment from 'moment';
 
 function MovieCard(props) {
   return (
-    <section className='w-[150px] md:w-64 flex-shrink-0'>
+    <section className='w-[150px] md:w-64 flex-shrink-0 hover:scale-105 ease-in-out duration-300'>
         <div className='relative h-40 md:h-96'>
             <Image
                 src={props.image ? `${IMG_ORIGINAL}${props.image}` : 'https://image.tmdb.org/t/p/original/bOGkgRGdhrBYJSLpXaxhXVstddV.jpg'}

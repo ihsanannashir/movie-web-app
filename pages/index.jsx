@@ -4,7 +4,7 @@ import React from 'react'
 import moment from 'moment'
 import MovieSlider from '@/components/MovieSlider'
 
-export default function Home({dataNowPlaying, dataGenreId}) {
+export default function Home({dataNowPlaying, dataGenreId, dataPopular, dataTopRated}) {
   let dataNow = [];    
   for (let index = 0; index < dataNowPlaying.results.length; index++) {
       if (index > 0) {
@@ -45,6 +45,8 @@ export default function Home({dataNowPlaying, dataGenreId}) {
       </div>
       <div className=''>
         <MovieSlider section='Now Playing' data={dataNowPlaying.results} more='now-playing' />
+        <MovieSlider section='Popular' data={dataPopular.results} more='popular' />
+        <MovieSlider section='Top Rated' data={dataTopRated.results} more='top-rated' />
       </div>
     </Layout>
   )
@@ -57,9 +59,15 @@ export async function getStaticProps() {
   const resGenreId = await fetch(`${SERVER}/genre/movie/list?api_key=${API_KEY}`)
   const dataGenreId = await resGenreId.json()
 
+  const resPopular = await fetch(`${SERVER}/movie/popular?api_key=${API_KEY}`)
+  const dataPopular = await resPopular.json()
+
+  const resTopRated = await fetch(`${SERVER}/movie/top_rated?api_key=${API_KEY}`)
+  const dataTopRated = await resTopRated.json()
+
   return {
     props: {
-      dataNowPlaying, dataGenreId,
+      dataNowPlaying, dataGenreId, dataPopular, dataTopRated,
     },
   }
 }

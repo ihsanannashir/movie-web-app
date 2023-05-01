@@ -18,14 +18,14 @@ function MovieSlider(props) {
     }
 
   return (
-    <section className='relative flex flex-col max-w-screen space-y-3 md:space-y-5 mt-5 md:mt-8'>
+    <section className='relative flex flex-col max-w-screen space-y-3 md:space-y-5 mt-6 md:mt-8'>
         <div className='flex justify-between'>
             <h2 className='text-base md:text-2xl font-semibold'>{props.section}</h2>
             <Link href={props.more ? props.more : ''} className={`text-xs md:text-base text-secondary/60 hover:text-white ${hd}`}>See More</Link>
         </div>
         <div className='relative flex items-center'>
             <MdChevronLeft className='absolute z-50 -mt-16 hidden md:block opacity-50 cursor-pointer hover:opacity-100' onClick={slideLeft} size={50} />
-            <div id='slider' className='flex flex-row space-x-4 md:space-x-7 overflow-hidden overflox-y-hidden overflow-x-scroll scrollbar-hide scroll-smooth'>
+            <div id='slider' className='flex flex-row space-x-4 md:space-x-7 overflow-hidden overflox-y-hidden overflow-x-scroll scrollbar-hide scroll-smooth p-3 -m-3'>
                 {api.map((item, index) => {
                     return <>
                     <MovieCard
