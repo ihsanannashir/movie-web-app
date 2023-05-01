@@ -12,7 +12,7 @@ export default function Layout({children, pageTitle, content}) {
         {/* <link rel="icon" href="/Logo/favicon.png" /> */}
     </Head>
     <Navbar Title={pageTitle}/>
-    <main className='pt-16 px-4 md:pt-20 md:px-7 bg-dark-5'>{children}</main>
+    <main className='py-16 px-4 md:py-20 md:px-7 bg-dark-5'>{children}</main>
     </>
   )
 }
