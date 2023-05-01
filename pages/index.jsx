@@ -2,6 +2,7 @@ import Layout from '@/components/layout'
 import { API_KEY, SERVER, IMG_ORIGINAL } from '@/config'
 import React from 'react'
 import moment from 'moment'
+import MovieSlider from '@/components/MovieSlider'
 
 export default function Home({dataNowPlaying, dataGenreId}) {
   let dataNow = [];    
@@ -42,7 +43,8 @@ export default function Home({dataNowPlaying, dataGenreId}) {
           </div>
         </div>
       </div>
-      <div>iyyig
+      <div className=''>
+        <MovieSlider section='Now Playing' data={dataNowPlaying.results} more='now-playing' />
       </div>
     </Layout>
   )
