@@ -2,6 +2,7 @@ import React from 'react'
 import Navbar from './Navbar'
 import Head from 'next/head'
 import Link from 'next/link'
+import Footer from './Footer'
 
 export default function Layout({children, pageTitle, content}) {
   return (
@@ -13,6 +14,7 @@ export default function Layout({children, pageTitle, content}) {
     </Head>
     <Navbar Title={pageTitle}/>
     <main className='py-16 px-4 md:py-20 md:px-7 bg-dark-5'>{children}</main>
+    <Footer />
     </>
   )
 }

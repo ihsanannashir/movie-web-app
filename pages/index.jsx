@@ -34,9 +34,9 @@ export default function Home({dataNowPlaying, dataGenreId, dataPopular, dataTopR
                   })
                   
                   if (idx === dataNowPlaying.results[0].genre_ids.length - 1) {
-                    return <span>{genData}</span>
+                    return <span key={idx}>{genData}</span>
                   }
-                  return <span>{genData}, </span>
+                  return <span key={idx}>{genData}, </span>
                 })
                 }
             </div>
