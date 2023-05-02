@@ -28,14 +28,13 @@ function MovieSlider(props) {
             <MdChevronLeft className='absolute z-30 -mt-16 hidden md:block opacity-50 cursor-pointer hover:opacity-100' onClick={slideLeft} size={50} />
             <div ref={slideRef} className='flex flex-row space-x-4 md:space-x-7 overflow-hidden overflox-y-hidden overflow-x-scroll scrollbar-hide scroll-smooth p-3 -m-3'>
                 {api.map((item, index) => {
-                    return <>
-                    <MovieCard
+                    return <MovieCard
                         key={index}
+                        id={item.id}
                         image={item.poster_path}
                         title={item.original_title}
                         year={item.release_date}
                     />
-                    </>
                 })}
             </div>
             <MdChevronRight className='absolute z-30 -mt-16 right-0 hidden md:block opacity-50 cursor-pointer hover:opacity-100' onClick={slideRight} size={50} />

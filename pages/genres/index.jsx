@@ -4,7 +4,7 @@ import React from 'react'
 function Genres() {
   return (
     <Layout pageTitle={'Genres'} content={'Movies Genres'}>
-      <div>Genres ko namonyo</div> 
+      <div>Genres under construction</div> 
     </Layout>
   )
 }
