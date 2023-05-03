@@ -22,6 +22,7 @@ module.exports = {
         'dark-5': '#1C1B33',
         'primary': '#FFFFFF',
         'secondary': '#EBEBF5',
+        'papaya-blue': '#22D7FF',
       },
       fontFamily: {
         'sans': ['Roboto' ,'ui-sans-serif', 'system-ui', ...defaultTheme.fontFamily.sans],
@@ -30,5 +31,6 @@ module.exports = {
   },
   plugins: [
     require('tailwind-scrollbar-hide'),
+    require('@tailwindcss/line-clamp'),
   ],
 }

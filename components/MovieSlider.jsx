@@ -26,7 +26,7 @@ function MovieSlider(props) {
         </div>
         <div className='relative flex items-center'>
             <MdChevronLeft className='absolute z-30 -mt-16 hidden md:block opacity-50 cursor-pointer hover:opacity-100' onClick={slideLeft} size={50} />
-            <div ref={slideRef} className='flex flex-row space-x-4 md:space-x-7 overflow-hidden overflox-y-hidden overflow-x-scroll scrollbar-hide scroll-smooth p-3 -m-3'>
+            <div ref={slideRef} className='flex flex-row space-x-4 md:space-x-7 overflow-hidden overflox-y-hidden overflow-x-scroll scrollbar-hide scroll-smooth p-3 -m-3 z-20'>
                 {api.map((item, index) => {
                     return <MovieCard
                         key={index}
