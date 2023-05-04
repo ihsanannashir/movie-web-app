@@ -6,8 +6,9 @@ import moment from 'moment'
 import ISO6391 from 'iso-639-1';
 import ReviewCard from '@/components/ReviewCard'
 import Link from 'next/link'
+import MovieSlider from '@/components/MovieSlider'
 
-function MovieDetail({dataDetail, dataReview}) {
+function MovieDetail({dataDetail, dataReview, dataRecom}) {
   const poster = dataDetail.poster_path ? IMG_ORIGINAL.toString() + dataDetail.poster_path.toString() : ''
 
   return (
@@ -77,13 +78,13 @@ function MovieDetail({dataDetail, dataReview}) {
               if (index > 3) {
                 return ''
               }
-              return <ReviewCard key={item.id} ava={item.avatar_path} username={item.author} review={item.content} date={item.updated_at} />
+              return <ReviewCard key={item.id} ava={item.author_details.avatar_path} username={item.author} review={item.content} date={item.updated_at} />
             })}
           </div>
           <div className='my-4 font-light text-sm italic hover:underline'>
-            <Link href={`https://www.imdb.com/title/${dataDetail.imdb_id}/reviews`}>See more reviews at IMDb</Link>
+            <Link target='_blank' href={`https://www.imdb.com/title/${dataDetail.imdb_id}/reviews`}>See more reviews at IMDb</Link>
           </div>
-          
+          <MovieSlider section='More like this' data={dataRecom.results} />
         </div>
       </div>
     </Layout>
@@ -113,9 +114,12 @@ export async function getStaticProps({params}) {
   const resReview = await fetch(`${SERVER}/movie/${params.id}/reviews?api_key=${API_KEY}`)
   const dataReview = await resReview.json()
 
+  const resRecom = await fetch(`${SERVER}/movie/${params.id}/recommendations?api_key=${API_KEY}`)
+  const dataRecom = await resRecom.json()
+
   return {
     props: {
-      dataDetail, dataReview,
+      dataDetail, dataReview, dataRecom,
     },
   }
 }
