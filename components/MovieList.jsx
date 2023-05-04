@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import MovieCardShrink from './MovieCardShrink'
 
 function MovieList(props) {
