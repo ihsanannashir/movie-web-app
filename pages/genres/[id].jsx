@@ -3,6 +3,7 @@ import React from 'react'
 import { SERVER, API_KEY } from '@/config'
 import GenreSlider from '@/components/GenreSlider'
 import { useRouter } from 'next/router'
+import MovieList from '@/components/MovieList'
 
 function GenrePage({dataLatest, dataGenreId}) {
   const router = useRouter()
@@ -15,11 +16,14 @@ function GenrePage({dataLatest, dataGenreId}) {
     }
   })
 
+  const setName = name.filter(function (element) {
+    return element !== undefined;
+  });
+
   return (
-    <Layout pageTitle={'Duar'}>
+    <Layout pageTitle={setName}>
       <GenreSlider data={dataGenreId}/>
-      <div>{dataLatest.results[0].original_title}</div>
-      <div>this is {name} page</div>
+      <MovieList data={dataLatest.results} section={setName}/>
     </Layout>
   )
 }
