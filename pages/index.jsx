@@ -21,7 +21,7 @@ export default function Home({dataNowPlaying, dataGenreId, dataPopular, dataTopR
       <div className='w-full h-80 md:h-[420px] my-2 md:my-4 bg-[image:var(--image-url)] bg-cover bg-center rounded-xl md:rounded-2xl' style={{'--image-url': `url(${mainLayout})`}}>
         <Link href={`/movies/${dataNowPlaying.results[0].id}`}>
           <div className="w-full h-full backdrop-brightness-50 hover:backdrop-brightness-75 rounded-xl md:rounded-2xl transition duration-300">
-            <div className='bottom-0 absolute flex flex-col p-4 md:px-6 md:pb-8 space-y-0 md:space-y-1'>
+            <div className='bottom-0 inline-block translate-y-56 md:translate-y-72 flex-col p-6 md:px-10 md:pb-8 space-y-0 md:space-y-1'>
               <div className='font-bold text-xl md:text-3xl'>{dataNowPlaying.results[0].title}</div>
               <div className='flex flex-row font-normal text-secondary/75 text-xs md:text-base space-x-1 md:space-x-2'>
                 <span>{moment(dataNowPlaying.results[0].release_date).format('YYYY')}</span>

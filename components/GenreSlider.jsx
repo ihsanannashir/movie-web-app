@@ -97,7 +97,7 @@ function GenreSlider(props) {
   return (
     <section className='relative flex flex-col max-w-screen'>
         <div className='relative flex items-center'>
-            <MdChevronLeft className='absolute z-30 -mt-2 -ml-7 hidden md:block opacity-50 cursor-pointer hover:opacity-100' onClick={slideLeft} size={30} />
+            <MdChevronLeft className='absolute z-30 -mt-2 hidden md:block opacity-50 cursor-pointer hover:opacity-100' onClick={slideLeft} size={30} />
             <div ref={slideRef} className='flex flex-row space-x-4 md:space-x-7 overflow-hidden overflox-y-hidden overflow-x-scroll scrollbar-hide scroll-smooth p-3 -m-3 z-20'>
                 {api.genres.map((item, index) => {
                     return <GenreCard
@@ -108,7 +108,7 @@ function GenreSlider(props) {
                     />
                 })}
             </div>
-            <MdChevronRight className='absolute z-30 -mt-2 -mr-7 right-0 hidden md:block opacity-50 cursor-pointer hover:opacity-100' onClick={slideRight} size={30} />
+            <MdChevronRight className='absolute z-30 -mt-2 right-0 hidden md:block opacity-50 cursor-pointer hover:opacity-100' onClick={slideRight} size={30} />
         </div>
         
     </section>
