@@ -10,7 +10,7 @@ function MovieCard(props) {
       <Link href={`/movies/${props.id}`}>
         <div className='relative h-40 md:h-96'>
           <Image
-              src={props.image ? `${IMG_ORIGINAL}${props.image}` : '/../public/image-not-found.png'}
+              src={props.image ? `${IMG_ORIGINAL}${props.image}` : '/image-not-found.png'}
               alt=''
               fill
               className='object-cover rounded-2xl'
