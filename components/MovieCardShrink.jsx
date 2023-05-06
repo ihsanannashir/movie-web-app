@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 function MovieCardShrink(props) {
   return (
-    <section className='md:max-w-[300px] md:min-w-[256px] min-w-[75px] hover:scale-105 ease-in-out duration-300'>
+    <section className='md:w-[256px] md:min-w-[256px] min-w-[75px] hover:scale-105 ease-in-out duration-300'>
       <Link href={`/movies/${props.id}`}>
         <div className='w-full relative pt-[150%]'>
           <Image
