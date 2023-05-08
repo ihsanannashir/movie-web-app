@@ -14,6 +14,7 @@ function MovieCard(props) {
               alt=''
               fill
               className='object-cover rounded-2xl'
+              sizes= '100vw'
           />
         </div>
 

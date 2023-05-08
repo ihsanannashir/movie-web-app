@@ -22,6 +22,3 @@ export default function Layout({children, pageTitle, content}) {
     </>
   )
 }
-// const bgLy = mainLayout ? mainLayout : 'bg-dark-5'
-// bg-[image:var(--image-url)]
-// style={{'--image-url': `url(${mainLayout})`}}

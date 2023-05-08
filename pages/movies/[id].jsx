@@ -23,6 +23,7 @@ function MovieDetail({dataDetail, dataReview, dataRecom}) {
               width={551}
               className='absolute top-0 bottom-0 left-0 right-0 w-full h-full object-cover rounded-2xl'
               alt=''
+              sizes="100vw"
               />
             </div>
           </div>

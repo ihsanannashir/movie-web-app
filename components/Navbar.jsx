@@ -2,6 +2,8 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import { GoSearch } from "react-icons/go"
 import { IoMdMenu, IoMdClose } from 'react-icons/io'
+import { SERVER, API_KEY } from '@/config'
+import { useRouter } from "next/router"
 
 const NavItem = [
   {
@@ -18,8 +20,16 @@ const NavItem = [
   },
 ]
 
-function Navbar({Title}) {
+function Navbar({Title, setResults}) {
   const [navbar, setNavbar] = useState(false)
+  const router = useRouter()
+  const [route, setRoute] = useState()
+
+  const handleSubmit =async (e) => {
+    e.preventDefault();
+    router.push("/search?query=" + route)
+  }
+
 
   return (
     <header className='bg-dark-1 w-full top-0 z-50 fixed'>
@@ -39,15 +49,16 @@ function Navbar({Title}) {
             </button>
           </div>
         </div>
-
+        
+        {/* //Search Bar */}
         <div className='md:w-[30%] lg:w-[25%] hidden md:block'>
-          <label className="relative block">
+          <form className="relative block" onSubmit={handleSubmit}>
             <span className="sr-only">Search</span>
-            <input className="placeholder:text-secondary/60 block bg-dark-2 w-full border border-secondary/50 rounded-full py-2 pl-4 pr-12 focus:outline-none focus:border-secondary focus:ring-1 text-sm placeholder:font-light" placeholder="Search here..." type="text" name="search"/>
-            <span className="absolute inset-y-0 right-0 flex items-center pr-4">
+            <input className="placeholder:text-secondary/60 block bg-dark-2 w-full border border-secondary/50 rounded-full py-2 pl-4 pr-12 focus:outline-none focus:border-secondary focus:ring-1 text-sm placeholder:font-light" placeholder="Search here..." type="text" name="search" onChange={(e)=>{setRoute(e.target.value)}}/>
+            <button type='submit' className="absolute inset-y-0 right-0 flex items-center pr-4">
               <GoSearch size={20} color='white' />
-            </span>
-          </label>
+            </button>
+          </form>
         </div>
       </div>
     </header>

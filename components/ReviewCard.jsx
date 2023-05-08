@@ -20,6 +20,7 @@ function ReviewCard(props) {
             alt=''
             fill
             className='fixed object-cover overflow-hidden rounded-full'
+            sizes="100vw"
             />
         </div>
         <div className='flex flex-col space-y-3 md:w-11/12'>

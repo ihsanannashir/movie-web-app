@@ -11,6 +11,7 @@ function GenreCard(props) {
               src={props.image ? props.image : '/image-not-found.png'}
               alt=''
               fill
+              sizes="100vw"
               className='object-cover overflow-hidden rounded-2xl opacity-30'
           />
           <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-base md:text-3xl font-semibold md:font-bold text-center'>{props.name}</div>
