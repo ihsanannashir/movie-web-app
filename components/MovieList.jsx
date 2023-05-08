@@ -7,7 +7,7 @@ function MovieList(props) {
     return (
         <section className='mx-auto my-4 md:my-6'>
             <div className='flex flex-col'>
-                <h1 className='text-lg md:text-3xl font-semibold md:font-bold w-screen'>Latest {props.section} Movies</h1>
+                <h1 className='text-lg md:text-3xl font-semibold md:font-bold w-screen'>{props.section}</h1>
                 <div className='grid grid-cols-2 md:flex md:flex-wrap justify-center'>
                     {api.map((item, index) => {
                         return <div className='p-4' key={index}><MovieCardShrink

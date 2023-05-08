@@ -31,7 +31,7 @@ function GenrePage({dataLatest, dataGenreId, dataFeatured}) {
         <h1 className='text-lg md:text-3xl font-semibold md:font-bold w-screen'>Featured {setName} Movie</h1>
         <FeaturedCard src={`/movies/${FeaturedURL.id}`} name={FeaturedURL.original_title} image={`${IMG_ORIGINAL}/${dataFeatured.results[0].backdrop_path}`} />
       </section>
-      <MovieList data={dataLatest.results} section={setName}/>
+      <MovieList data={dataLatest.results} section={`Latest ${setName} Movies`}/>
     </Layout>
   )
 }
