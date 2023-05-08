@@ -5,6 +5,7 @@ import GenreSlider from '@/components/GenreSlider'
 import { useRouter } from 'next/router'
 import MovieList from '@/components/MovieList'
 import FeaturedCard from '@/components/FeaturedCard'
+import { getGenre } from '../api/genres'
 
 function GenrePage({dataLatest, dataGenreId, dataFeatured}) {
   const router = useRouter()
@@ -27,7 +28,7 @@ function GenrePage({dataLatest, dataGenreId, dataFeatured}) {
     <Layout pageTitle={setName}>
       <GenreSlider data={dataGenreId}/>
       <section className='my-4 md:my-10 space-y-2 md:space-y-6'>
-        <h1 className='text-lg md:text-3xl font-semibold md:font-bold w-screen'>Featured {setName} Movies</h1>
+        <h1 className='text-lg md:text-3xl font-semibold md:font-bold w-screen'>Featured {setName} Movie</h1>
         <FeaturedCard src={`/movies/${FeaturedURL.id}`} name={FeaturedURL.original_title} image={`${IMG_ORIGINAL}/${dataFeatured.results[0].backdrop_path}`} />
       </section>
       <MovieList data={dataLatest.results} section={setName}/>
@@ -52,8 +53,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({params}) {
-  const resGenreId = await fetch(`${SERVER}/genre/movie/list?api_key=${API_KEY}`)
-  const dataGenreId = await resGenreId.json()
+  const resGenreId = await getGenre()
+  const dataGenreId = await resGenreId
 
   const resLatest = await fetch(`${SERVER}/discover/movie?with_genres=${params.id}&sort_by=release_date.desc&api_key=${API_KEY}`)
   const dataLatest = await resLatest.json()

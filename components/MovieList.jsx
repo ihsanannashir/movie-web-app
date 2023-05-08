@@ -10,8 +10,7 @@ function MovieList(props) {
                 <h1 className='text-lg md:text-3xl font-semibold md:font-bold w-screen'>Latest {props.section} Movies</h1>
                 <div className='grid grid-cols-2 md:flex md:flex-wrap justify-center'>
                     {api.map((item, index) => {
-                        return <div className='p-4'><MovieCardShrink
-                            key={index}
+                        return <div className='p-4' key={index}><MovieCardShrink
                             id={item.id}
                             image={item.poster_path}
                             title={item.original_title}

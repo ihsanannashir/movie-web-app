@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 function FeaturedCard(props) {
   return (
-    <section className='w-full h-full md:h-[300px] flex-shrink-0 hover:scale-105 ease-in-out duration-300 rounded-2xl md:rounded-3xl'>
+    <section className='w-full h-full md:h-[300px] flex-shrink-0 hover:scale-[1.02] ease-in-out duration-300 rounded-2xl md:rounded-3xl'>
       <Link href={props.src ? props.src : '/'}>
         <div className='relative h-48 md:h-[300px] rounded-2xl'>
           <Image

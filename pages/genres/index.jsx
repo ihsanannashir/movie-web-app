@@ -3,6 +3,7 @@ import React from 'react'
 import MovieSlider from '@/components/MovieSlider'
 import { SERVER, API_KEY ,IMG_ORIGINAL } from '@/config'
 import GenreSlider from '@/components/GenreSlider'
+import { getGenre } from '../api/genres'
 
 function Genres({dataGenreId, dataPopular, dataTopRated, dataNowPlaying}) {
   return (
@@ -18,8 +19,8 @@ function Genres({dataGenreId, dataPopular, dataTopRated, dataNowPlaying}) {
 }
 
 export async function getStaticProps() {
-  const resGenreId = await fetch(`${SERVER}/genre/movie/list?api_key=${API_KEY}`)
-  const dataGenreId = await resGenreId.json()
+  const resGenreId = await getGenre()
+  const dataGenreId = await resGenreId
 
   const resPopular = await fetch(`${SERVER}/movie/popular?api_key=${API_KEY}`)
   const dataPopular = await resPopular.json()

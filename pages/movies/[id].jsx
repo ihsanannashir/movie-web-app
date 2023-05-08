@@ -40,9 +40,9 @@ function MovieDetail({dataDetail, dataReview, dataRecom}) {
                     <td className='py-2 md:py-4 text-secondary/60'>
                     {dataDetail.genres.map((cont, idx) => {
                       if (idx === dataDetail.genres.length - 1) {
-                        return <a key={idx} className='hover:underline hover:cursor-default'>{cont.name}</a>
+                        return <Link key={idx} href={`/genres/${cont.id}`} className='hover:underline hover:cursor-default'>{cont.name}</Link>
                       }
-                      return <span key={idx}><a className='hover:underline hover:cursor-default'>{cont.name}</a>, </span>
+                      return <span><Link key={idx} href={`/genres/${cont.id}`} className='hover:underline hover:cursor-default' >{cont.name}</Link>, </span> 
                     })}
                     </td>
                   </tr>
