@@ -43,7 +43,7 @@ function MovieDetail({dataDetail, dataReview, dataRecom}) {
                       if (idx === dataDetail.genres.length - 1) {
                         return <Link key={idx} href={`/genres/${cont.id}`} className='hover:underline hover:cursor-default'>{cont.name}</Link>
                       }
-                      return <span><Link key={idx} href={`/genres/${cont.id}`} className='hover:underline hover:cursor-default' >{cont.name}</Link>, </span> 
+                      return <span key={idx}><Link href={`/genres/${cont.id}`} className='hover:underline hover:cursor-default' >{cont.name}</Link>, </span> 
                     })}
                     </td>
                   </tr>

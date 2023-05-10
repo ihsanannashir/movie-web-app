@@ -16,7 +16,7 @@ function ReviewCard(props) {
     <div className='flex flex-row py-3 px-5 md:px-8 md:py-5 rounded-lg md:rounded-xl border-secondary/40 border-[1px] md:space-x-4'>
         <div className='hidden md:block relative md:w-[60px] md:h-[60px] md:items-start'>
             <Image
-            src={props.ava ? `${IMG_ORIGINAL}${props.ava}` : '/../public/user.png'}
+            src={props.ava ? (props.ava.charAt(1).toString() === 'h' && props.ava.charAt(2).toString() === 't' ? props.ava.substring(1) : `${IMG_ORIGINAL}${props.ava}`) : '/../public/user.png'}
             alt=''
             fill
             className='fixed object-cover overflow-hidden rounded-full'

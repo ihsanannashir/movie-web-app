@@ -9,6 +9,12 @@ const nextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'secure.gravatar.com',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 }
