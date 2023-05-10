@@ -9,7 +9,7 @@ function Search({dataResult, search}) {
     const name = router.query;
 
     return (
-        <Layout pageTitle={'Search'}>
+        <Layout pageTitle={'Search'} content={'Search Results'}>
             <MovieList data={dataResult.results} section={`Search Results for ${name.query}`}/>
         </Layout>
     )

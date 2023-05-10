@@ -12,7 +12,7 @@ function MovieDetail({dataDetail, dataReview, dataRecom}) {
   const poster = dataDetail.poster_path ? IMG_ORIGINAL.toString() + dataDetail.poster_path.toString() : ''
 
   return (
-    <Layout pageTitle={dataDetail.title}>
+    <Layout pageTitle={dataDetail.title} content={`Details of ${dataDetail.title}`}>
       <div className='lg:w-[900px] md:mt-32 mt-6 md:m-auto'>
         <div className='flex flex-col md:flex-row m-2 md:m-0 md:space-x-6'>
           <div className='md:w-1/4 w-[90%] mx-auto md:mx-0'>

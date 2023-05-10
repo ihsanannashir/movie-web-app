@@ -25,7 +25,7 @@ function GenrePage({dataLatest, dataGenreId, dataFeatured}) {
   });
 
   return (
-    <Layout pageTitle={setName}>
+    <Layout pageTitle={setName} content={`${setName}'s page`}>
       <GenreSlider data={dataGenreId}/>
       <section className='my-4 md:my-10 space-y-2 md:space-y-6'>
         <h1 className='text-lg md:text-3xl font-semibold md:font-bold w-screen'>Featured {setName} Movie</h1>
